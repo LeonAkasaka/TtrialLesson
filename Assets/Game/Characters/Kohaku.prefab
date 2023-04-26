@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 1974051576}
   - component: {fileID: 218756135406266065}
   m_Layer: 0
-  m_Name: Utc_sum_humanoid
+  m_Name: Kohaku
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

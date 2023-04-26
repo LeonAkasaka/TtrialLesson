@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 8053132334540657807}
   - component: {fileID: 5876524450399866985}
   m_Layer: 0
-  m_Name: Misaki_sum_humanoid
+  m_Name: Misaki
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

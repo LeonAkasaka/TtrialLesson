@@ -2325,7 +2325,7 @@ GameObject:
   - component: {fileID: 7905396547574193600}
   - component: {fileID: -2631897511623079048}
   m_Layer: 0
-  m_Name: Yuko_sum_humanoid
+  m_Name: Yuko
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
