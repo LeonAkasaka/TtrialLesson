@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class RefPlayer : MonoBehaviour
 {
     private Animator _animator;
     private int _faceLayer;
