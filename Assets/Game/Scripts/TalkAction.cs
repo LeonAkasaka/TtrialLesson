@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
+[RequireComponent(typeof(Animator))]
 public class TalkAction : MonoBehaviour
 {
     [field: SerializeField]
@@ -11,11 +12,25 @@ public class TalkAction : MonoBehaviour
     [field: DisplayInfo(name = "Message")]
     public string Message { get; private set; }
 
-    public void Talk()
+    private Animator _animator;
+
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
+    public void Talk() => Talk(default);
+
+    public void Talk(Transform target)
     {
         if (FindObjectOfType<MessageWindow>() is { } messageWindow)
         {
             messageWindow.Show(Name, Message);
+        }
+
+        if (target)
+        {
+            transform.LookAt(target);
         }
     }
 }
