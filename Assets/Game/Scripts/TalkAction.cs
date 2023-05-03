@@ -23,7 +23,7 @@ public class TalkAction : MonoBehaviour
 
     public void Talk(Transform target)
     {
-        if (FindObjectOfType<MessageWindow>() is { } messageWindow)
+        if (FindAnyObjectByType<MessageWindow>() is { } messageWindow)
         {
             messageWindow.Show(Name, Message);
         }
