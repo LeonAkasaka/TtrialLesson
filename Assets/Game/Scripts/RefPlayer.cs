@@ -1,22 +1,21 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class RefPlayer : MonoBehaviour
 {
     private Animator _animator;
-    private int _faceLayer;
     private TalkAction _target;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        _faceLayer = _animator.GetLayerIndex("face");
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("space"))
         {
-            _target?.Talk();
+            _target?.Talk(transform);
         }
 
         // 前後移動の判定
@@ -43,7 +42,6 @@ public class RefPlayer : MonoBehaviour
         else // 待機
         {
             _animator.Play("Standing@loop");
-            _animator.Play("default", _faceLayer);
         }
 
         // 左右の回転判定
@@ -68,12 +66,5 @@ public class RefPlayer : MonoBehaviour
         {
             _target = null;
         }
-    }
-
-    void OnCallChangeFace(string stateName)
-    {
-        // アニメーションに設定されている表情更新イベントを反映
-        _animator.SetLayerWeight(_faceLayer, 1);
-        _animator.Play(stateName, _faceLayer);
     }
 }
