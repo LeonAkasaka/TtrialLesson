@@ -4,7 +4,6 @@ using UnityEngine;
 public class RefPlayer : MonoBehaviour
 {
     private Animator _animator;
-    //private TalkAction _target;
 
     private void Start()
     {
@@ -13,22 +12,6 @@ public class RefPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("space"))
-        {
-            var distance = 1.0F;
-            var forward = transform.TransformDirection(Vector3.forward);
-            var position = transform.position + new Vector3(0, 0.5F, 0);
-
-            if (Physics.Raycast(position, forward, out var hit, distance))
-            {
-                var target = hit.collider.GetComponent<TalkAction>();
-                if (target is not null)
-                {
-                    target?.Talk(transform);
-                }
-            }
-        }
-
         // 前後移動の判定
         if (Input.GetKey(KeyCode.UpArrow)) // 前進
         {
@@ -63,6 +46,23 @@ public class RefPlayer : MonoBehaviour
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Rotate(0, 120 * Time.deltaTime, 0);
+        }
+
+        // アクションの判定
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("space"))
+        {
+            var distance = 1.0F;
+            var forward = transform.TransformDirection(Vector3.forward);
+            var position = transform.position + new Vector3(0, 0.5F, 0);
+
+            if (Physics.Raycast(position, forward, out var hit, distance))
+            {
+                var target = hit.collider.GetComponent<TalkAction>();
+                if (target is not null)
+                {
+                    target?.Talk(transform);
+                }
+            }
         }
     }
 }
