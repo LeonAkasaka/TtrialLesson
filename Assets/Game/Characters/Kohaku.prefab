@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 1974051576}
   - component: {fileID: 218756135406266065}
   - component: {fileID: -8439055290335228319}
+  - component: {fileID: 1875510890411334436}
   m_Layer: 0
   m_Name: Kohaku
   m_TagString: Untagged
@@ -513,6 +514,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b08f51e780b849c4193bf5cbee550f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1875510890411334436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103398895458486522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e04b4e3f696fef41b864750f4bea40a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &103398895458486560
