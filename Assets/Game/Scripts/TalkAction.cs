@@ -12,13 +12,6 @@ public class TalkAction : MonoBehaviour
     [field: DisplayInfo(name = "Message")]
     public string Message { get; private set; }
 
-    private Animator _animator;
-
-    private void Start()
-    {
-        _animator = GetComponent<Animator>();
-    }
-
     public void Talk() => Talk(default);
 
     public void Talk(Transform target)
