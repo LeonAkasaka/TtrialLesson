@@ -976,6 +976,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5876524450399866985, guid: 0e7dc6cacbb4a034d8d811cab0cb48ee,
+        type: 3}
+      propertyPath: <Name>k__BackingField
+      value: "\u85E4\u539F\u307F\u3055\u304D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876524450399866985, guid: 0e7dc6cacbb4a034d8d811cab0cb48ee,
+        type: 3}
+      propertyPath: <Message>k__BackingField
+      value: "\u3044\u3044\u306E\u3088\u3053\u306E\u304F\u3089\u3044\u3067"
+      objectReference: {fileID: 0}
     - target: {fileID: 5962192521836670213, guid: 0e7dc6cacbb4a034d8d811cab0cb48ee,
         type: 3}
       propertyPath: m_Name
