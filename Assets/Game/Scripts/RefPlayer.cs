@@ -4,7 +4,7 @@ using UnityEngine;
 public class RefPlayer : MonoBehaviour
 {
     private Animator _animator;
-    private TalkAction _target;
+    //private TalkAction _target;
 
     private void Start()
     {
@@ -15,7 +15,18 @@ public class RefPlayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("space"))
         {
-            _target?.Talk(transform);
+            var distance = 1.0F;
+            var forward = transform.TransformDirection(Vector3.forward);
+            var position = transform.position + new Vector3(0, 0.5F, 0);
+
+            if (Physics.Raycast(position, forward, out var hit, distance))
+            {
+                var target = hit.collider.GetComponent<TalkAction>();
+                if (target is not null)
+                {
+                    target?.Talk(transform);
+                }
+            }
         }
 
         // ‘OŒãˆÚ“®‚Ì”»’è
@@ -52,19 +63,6 @@ public class RefPlayer : MonoBehaviour
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Rotate(0, 120 * Time.deltaTime, 0);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        other.TryGetComponent(out _target);
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.TryGetComponent<TalkAction>(out var target) && target == _target)
-        {
-            _target = null;
         }
     }
 }
