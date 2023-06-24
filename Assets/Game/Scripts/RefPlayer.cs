@@ -60,7 +60,7 @@ public class RefPlayer : MonoBehaviour
                 var target = hit.collider.GetComponent<TalkAction>();
                 if (target is not null)
                 {
-                    target?.Talk(transform);
+                    target.Talk(transform);
                 }
             }
         }
