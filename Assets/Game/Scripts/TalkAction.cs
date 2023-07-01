@@ -1,29 +1,32 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-[RequireComponent(typeof(Animator))]
-public class TalkAction : MonoBehaviour
+namespace Sample.MessageWindow
 {
-    [field: SerializeField]
-    [field: DisplayInfo(name = "Name")]
-    public string Name { get; private set; }
-
-    [field: SerializeField]
-    [field: DisplayInfo(name = "Message")]
-    public string Message { get; private set; }
-
-    public void Talk() => Talk(default);
-
-    public void Talk(Transform target)
+    [RequireComponent(typeof(Animator))]
+    public class TalkAction : MonoBehaviour
     {
-        if (FindAnyObjectByType<MessageWindow>() is { } messageWindow)
-        {
-            messageWindow.Show(Name, Message);
-        }
+        [field: SerializeField]
+        [field: DisplayInfo(name = "Name")]
+        public string Name { get; private set; }
 
-        if (target)
+        [field: SerializeField]
+        [field: DisplayInfo(name = "Message")]
+        public string Message { get; private set; }
+
+        public void Talk() => Talk(default);
+
+        public void Talk(Transform target)
         {
-            transform.LookAt(target);
+            if (FindAnyObjectByType<MessageWindow>() is { } messageWindow)
+            {
+                messageWindow.Show(Name, Message);
+            }
+
+            if (target)
+            {
+                transform.LookAt(target);
+            }
         }
     }
 }

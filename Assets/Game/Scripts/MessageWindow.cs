@@ -1,23 +1,26 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MessageWindow : MonoBehaviour
+namespace Sample.MessageWindow
 {
-    [SerializeField]
-    private Text _name;
-
-    [SerializeField]
-    private Text _content;
-
-    public void Show(string name, string message)
+    public class MessageWindow : MonoBehaviour
     {
-        if (_name is not null)
+        [SerializeField]
+        private Text _name;
+
+        [SerializeField]
+        private Text _content;
+
+        public void Show(string name, string message)
         {
-            _name.text = name;
-        }
-        if (_content is not null)
-        {
-            _content.text = message;
+            if (_name is not null)
+            {
+                _name.text = name;
+            }
+            if (_content is not null)
+            {
+                _content.text = message;
+            }
         }
     }
 }

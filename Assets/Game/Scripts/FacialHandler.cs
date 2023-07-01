@@ -1,30 +1,33 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
-public class FacialHandler : MonoBehaviour
+namespace Sample.UnityChan
 {
-    private Animator _animator;
-    private int _faceLayer;
-
-    private void Start()
+    [RequireComponent(typeof(Animator))]
+    public class FacialHandler : MonoBehaviour
     {
-        _animator = GetComponent<Animator>();
-        _faceLayer = _animator.GetLayerIndex("face");
-    }
+        private Animator _animator;
+        private int _faceLayer;
 
-    private void Update()
-    {
-        var info = _animator.GetCurrentAnimatorStateInfo(0);
-        if (info.IsName("Standing@loop"))
+        private void Start()
         {
-            _animator.Play("default", _faceLayer);
+            _animator = GetComponent<Animator>();
+            _faceLayer = _animator.GetLayerIndex("face");
         }
-    }
 
-    void OnCallChangeFace(string stateName)
-    {
-        // アニメーションに設定されている表情更新イベントを反映
-        _animator.SetLayerWeight(_faceLayer, 1);
-        _animator.Play(stateName, _faceLayer);
+        private void Update()
+        {
+            var info = _animator.GetCurrentAnimatorStateInfo(0);
+            if (info.IsName("Standing@loop"))
+            {
+                _animator.Play("default", _faceLayer);
+            }
+        }
+
+        void OnCallChangeFace(string stateName)
+        {
+            // アニメーションに設定されている表情更新イベントを反映
+            _animator.SetLayerWeight(_faceLayer, 1);
+            _animator.Play(stateName, _faceLayer);
+        }
     }
 }
