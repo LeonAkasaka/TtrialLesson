@@ -1,7 +1,7 @@
-using Sample.MessageWindow;
+using Sample.UI;
 using UnityEngine;
 
-namespace Sample.UnityChan.Ref
+namespace Sample.UnityChan
 {
     [RequireComponent(typeof(Animator))]
     public class Player : MonoBehaviour

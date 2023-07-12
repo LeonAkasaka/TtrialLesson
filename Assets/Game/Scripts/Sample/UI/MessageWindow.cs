@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Sample.MessageWindow
+namespace Sample.UI
 {
     public class MessageWindow : MonoBehaviour
     {

@@ -1,7 +1,8 @@
+using Sample.UI;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace Sample.MessageWindow
+namespace Sample.UnityChan
 {
     [RequireComponent(typeof(Animator))]
     public class TalkAction : MonoBehaviour
