@@ -32,5 +32,11 @@ namespace Sample.SpaceInvaders
             var v = _speed * Time.deltaTime * _direction;
             transform.Translate(v, 0, 0);
         }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
