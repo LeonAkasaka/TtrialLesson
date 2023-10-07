@@ -51,24 +51,6 @@ namespace Sample.UnityChan
                 transform.Rotate(0, 120 * Time.deltaTime, 0);
             }
 
-            // デバッグ用の判定ライン表示
-            var forward = transform.TransformDirection(Vector3.forward);
-            var position = transform.position + new Vector3(0, 0.5F, 0);
-            Debug.DrawLine(position, position + forward, Color.red);
-
-            // アクションの判定
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("space"))
-            {
-                var distance = 1.0F;
-                if (Physics.Raycast(position, forward, out var hit, distance))
-                {
-                    var target = hit.collider.GetComponent<TalkAction>();
-                    if (target is not null)
-                    {
-                        target.Talk(transform);
-                    }
-                }
-            }
         }
     }
 }

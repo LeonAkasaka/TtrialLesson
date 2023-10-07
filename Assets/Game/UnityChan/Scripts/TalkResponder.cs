@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 namespace Sample.UnityChan
 {
     [RequireComponent(typeof(Animator))]
-    public class TalkAction : MonoBehaviour
+    public class TalkResponder : MonoBehaviour
     {
         [field: SerializeField]
         [field: DisplayInfo(name = "Name")]
