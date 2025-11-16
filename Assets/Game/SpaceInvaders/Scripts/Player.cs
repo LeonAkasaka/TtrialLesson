@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 namespace Sample.SpaceInvaders
@@ -7,15 +8,15 @@ namespace Sample.SpaceInvaders
     {
         private void Update()
         {
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Keyboard.current.leftArrowKey.isPressed)
             {
                 transform.Translate(-3 * Time.deltaTime, 0, 0);
             }
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Keyboard.current.rightArrowKey.isPressed)
             {
                 transform.Translate(3 * Time.deltaTime, 0, 0);
             }
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 var missile = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
                 missile.transform.position = transform.position + new Vector3(0, 1, 0);

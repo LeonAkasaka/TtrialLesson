@@ -1,5 +1,6 @@
 using Sample.UI;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Sample.UnityChan
 {
@@ -16,9 +17,9 @@ namespace Sample.UnityChan
         private void Update()
         {
             // 前後移動の判定
-            if (Input.GetKey(KeyCode.UpArrow)) // 前進
+            if (Keyboard.current.upArrowKey.isPressed) // 前進
             {
-                if (Input.GetKey(KeyCode.LeftShift))
+                if (Keyboard.current.leftShiftKey.isPressed)
                 {
                     transform.Translate(0, 0, 2 * Time.deltaTime);
                     _animator.Play("Running@loop");
@@ -30,7 +31,7 @@ namespace Sample.UnityChan
                 }
                 _animator.SetFloat("Speed", 1); // アニメーション順再生
             }
-            else if (Input.GetKey(KeyCode.DownArrow)) // 後退
+            else if (Keyboard.current.downArrowKey.isPressed) // 後退
             {
                 transform.Translate(0, 0, -1 * Time.deltaTime);
                 _animator.Play("Walking@loop");
@@ -42,11 +43,11 @@ namespace Sample.UnityChan
             }
 
             // 左右の回転判定
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Keyboard.current.leftArrowKey.isPressed)
             {
                 transform.Rotate(0, -120 * Time.deltaTime, 0);
             }
-            else if (Input.GetKey(KeyCode.RightArrow))
+            else if (Keyboard.current.rightArrowKey.isPressed)
             {
                 transform.Rotate(0, 120 * Time.deltaTime, 0);
             }

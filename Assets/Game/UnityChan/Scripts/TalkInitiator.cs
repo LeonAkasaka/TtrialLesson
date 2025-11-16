@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Sample.UnityChan
 {
@@ -19,7 +20,7 @@ namespace Sample.UnityChan
             Debug.DrawLine(position, position + forward * _distance, Color.red);
 
             // ƒAƒNƒVƒ‡ƒ“‚Ì”»’è
-            if (Input.GetKeyDown(_keyCode))
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 if (Physics.Raycast(position, forward, out var hit, _distance))
                 {
