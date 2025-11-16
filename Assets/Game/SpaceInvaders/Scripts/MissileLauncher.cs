@@ -33,7 +33,7 @@ namespace Sample.SpaceInvaders
 
                 var r = missile.AddComponent<Rigidbody>();
                 r.useGravity = false;
-                r.velocity = _velocity;
+                r.linearVelocity = _velocity;
                 Destroy(missile, 3);
             }
         }
